@@ -105,10 +105,10 @@ app.delete('/clients/delete/:id', (req, res) => {
 //Meeting CRUD
 //Insert meeting into db
 app.post('/meetings/add', (req, res) => {
-    const {meeting_type, num_participant, start_date} = req.body;
+    const {topic, participant, start_date} = req.body;
     const sql = 'insert into meeting values(null, ?, ?, ?)';
 
-    db.query(sql, [meeting_type, num_participant, start_date], (err, result) => {
+    db.query(sql, [topic, participant, start_date], (err, result) => {
         if (err) {
             console.error('Error in adding the meeting', err);
             res.status(500).json(
@@ -146,9 +146,9 @@ app.get('/meetings', (req, res) => {
 //Update meeting
 app.put('/meetings/update', (req, res) => {
     console.log('updating... req: ', req);
-    const {id, meeting_type, num_participant, start_date} = req.body;
+    const {id, topic, participant, start_date} = req.body;
     const sql = 'update meeting set meeting_type = ?, num_participant = ?, start_date = ? where id = ?';
-    db.query(sql, [meeting_type, num_participant, start_date, id], (err, result) => {
+    db.query(sql, [topic, participant, start_date, id], (err, result) => {
         if (err) {
             console.error('Error in updating the client', err);
             res.status(500).json({ error: 'An error occured' });

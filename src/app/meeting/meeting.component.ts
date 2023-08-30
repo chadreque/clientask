@@ -71,9 +71,9 @@ export class MeetingComponent implements OnInit {
   }
 
   showDeleteDialog(meeting: MeetingModel) {
-    console.log('meeting: ', meeting.meeting_type)
+    console.log('meeting: ', meeting.topic)
     const modalRef = this.modalService.open(DialogComponent);
-    modalRef.componentInstance.content = {type: 'meeting', dataInfo: 'with topic: ' + meeting.meeting_type, id: meeting.id}
+    modalRef.componentInstance.content = {type: 'meeting', dataInfo: 'with topic: ' + meeting.topic, id: meeting.id}
   
   }
 

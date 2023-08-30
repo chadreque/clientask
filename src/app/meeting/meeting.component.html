@@ -51,7 +51,7 @@
 
                                     <div class="d-flex justify-content-end">
                                         <div class="btn-group" *ngIf="!isViewAllMeeting">
-                                            <button type="button" name="bt-submit" class="btn btn-dark"
+                                            <button type="button" name="fetchMeetings" class="btn btn-dark"
                                                 (click)="fetchMeetings()">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                     fill="currentColor" class="bi bi-view-list" viewBox="0 0 16 16">
@@ -83,13 +83,13 @@
                                 <div *ngIf="!isViewAllMeeting">
                                     <div class="form-floating mb-3">
                                         <input type="text" class="form-control" forma id="fullnnameInput"
-                                            placeholder="Enter your fullname" name="topic" [(ngModel)]="meeting.meeting_type">
+                                            placeholder="Enter your fullname" name="topic" [(ngModel)]="meeting.topic">
                                         <label for="fullnnameInput">Metting topic</label>
                                     </div>
 
                                     <div class="form-floating mb-3">
                                         <input type="email" class="form-control" id="emailInput"
-                                            placeholder="name@example.com" name="num_participant" [(ngModel)]="meeting.num_participant">
+                                            placeholder="name@example.com" name="num_participant" [(ngModel)]="meeting.participant">
                                         <label for="emailInput">Number of people</label>
                                     </div>
 
@@ -122,8 +122,8 @@
                                         <tbody *ngFor="let m of meetings$ | async; index as i">
                                             <tr>
                                                 <th scope="row">{{i + 1}}</th>
-                                                <td>{{m.meeting_type}}</td>
-                                                <td>{{m.num_participant}}</td>
+                                                <td>{{m.topic}}</td>
+                                                <td>{{m.participant}}</td>
                                                 <td>{{m.start_date | date :'short'}}</td>
                                                 <td>
                                                     <div class="btn-group" role="group" aria-label="Basic example">
