@@ -3,11 +3,10 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.8.
 
 ## Database Script
-
-
-## Development server
 Run the script below to create database clientask and tables Client and Meeting
+
 create database clientask;
+
 use clientask;
 
 create table client(
@@ -19,6 +18,7 @@ create table client(
     PRIMARY KEY (id)
 );
 
+
 create table meeting(
 	id int NOT NULL AUTO_INCREMENT,
     topic varchar(30) not null, 
@@ -27,6 +27,8 @@ create table meeting(
      PRIMARY KEY (id)
 ); 
 
+
+## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
